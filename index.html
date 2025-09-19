@@ -201,12 +201,12 @@
                                         <i class="fas fa-check-circle me-2"></i>
                                         Documento encontrado!
                                     </h5>
-                                    <p class="mb-3">O PDF foi localizado com sucesso para o CPF informado.</p>
+                                    <p class="mb-3">O PDF foi localizado com sucesso para o CPF informado. Abrindo automaticamente...</p>
                                     <hr>
                                     <div class="d-grid">
                                         <button type="button" class="btn btn-success" id="openPdfBtn">
                                             <i class="fas fa-external-link-alt me-2"></i>
-                                            Abrir PDF em Nova Aba
+                                            Abrir PDF
                                         </button>
                                     </div>
                                 </div>
@@ -421,6 +421,11 @@
             showSuccess() {
                 this.hideAllResults();
                 this.successDiv.classList.remove('hidden');
+                
+                // Abre o PDF automaticamente após um pequeno delay
+                setTimeout(() => {
+                    this.openPdf();
+                }, 1000); // 1 segundo de delay para o usuário ver a mensagem de sucesso
             }
             
             showError() {
@@ -439,8 +444,8 @@
                 const cpf = this.cpfInput.value.replace(/\D/g, '');
                 const pdfUrl = `/files/${cpf}.pdf`;
                 
-                // Abre PDF em nova aba
-                window.open(pdfUrl, '_blank');
+                // Abre PDF na mesma aba
+                window.location.href = pdfUrl;
             }
             
             

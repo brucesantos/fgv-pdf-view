@@ -30,13 +30,6 @@ A aplicação inclui uma simulação de backend que determina a existência do P
 #### ✅ **CPF com Documento (PDF encontrado)**
 **Regra**: CPFs que terminam em número **PAR** (0, 2, 4, 6, 8)
 
-**Exemplos:**
-```
-111.444.777-35  (termina em 5 - ÍMPAR = não encontrado)
-123.456.789-00  (termina em 0 - PAR = encontrado)
-987.654.321-24  (termina em 4 - PAR = encontrado)
-111.111.111-12  (termina em 2 - PAR = encontrado)
-```
 
 - **Resultado**: Botão "Abrir PDF em Nova Aba" aparece
 - **Comportamento**: Abre o PDF em uma nova janela/taba
@@ -44,12 +37,6 @@ A aplicação inclui uma simulação de backend que determina a existência do P
 #### ❌ **CPF sem Documento (PDF não encontrado)**
 **Regra**: CPFs que terminam em número **ÍMPAR** (1, 3, 5, 7, 9)
 
-**Exemplos:**
-```
-123.456.789-09  (termina em 9 - ÍMPAR = não encontrado)
-111.444.777-35  (termina em 5 - ÍMPAR = não encontrado)
-987.654.321-23  (termina em 3 - ÍMPAR = não encontrado)
-```
 
 - **Resultado**: Mensagem "PDF não encontrado para este CPF"
 - **Comportamento**: Oferece opção de nova consulta
